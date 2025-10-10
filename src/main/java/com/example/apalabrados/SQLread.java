@@ -1,4 +1,5 @@
 package com.example.apalabrados;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +8,7 @@ public class SQLread {
     private static final String URL = "jdbc:mysql://localhost:3306/apalabradossql";
     private static final String USER = "root";
     private static final String PASSWORD = "ChangeMe";
+
     public static List<String> obtenerPalabras() {
         Connection conexion = null;
         Statement stmt = null;

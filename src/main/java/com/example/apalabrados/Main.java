@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 //C:\Users\alvarod\IdeaProjects\CartasJavaFX\target
 //C:\Users\alvarod\IdeaProjects\CartasJavaFX\target\classes
 public class Main extends Application {
