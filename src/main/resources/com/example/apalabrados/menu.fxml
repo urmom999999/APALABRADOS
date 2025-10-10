@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background-pane" stylesheets="@menuCSS.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apalabrados.MenuController">
    <children>
-      <Text fx:id="titulo" layoutX="41.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="BIENVENIDO A APALABRADOS!" />
-      <Button fx:id="button" layoutX="482.0" layoutY="298.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" text="Comprobar" />
-      <TextArea fx:id="letra" layoutX="41.0" layoutY="298.0" prefHeight="37.0" prefWidth="201.0" promptText="Escriba la letra a intentar" />
-      <Text fx:id="areaCompletar" layoutX="43.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" wrappingWidth="370.13671875" />
-      <Text fx:id="ResultTries" layoutX="41.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text=" " wrappingWidth="501.13671875" />
-          <Text fx:id="letrasAcertadasId" layoutX="41.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="LETRAS QUE SE ACERTARON: " wrappingWidth="311.421875" />
-       <Text fx:id="letrasFalladasId" layoutX="41.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="LETRAS QUE SE FALLARON: " wrappingWidth="311.421875" />
-       <Text fx:id="contador" layoutX="45.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Contador, VICTORIAS: 0 DERROTAS: 0" />
+      <Text fx:id="titulo" fill="#9cc5e2" layoutX="165.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="BIENVENIDO A APALABRADOS!">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Button fx:id="button" graphicTextGap="1.0" layoutX="585.0" layoutY="345.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="121.0" text="Comprobar">
+         <font>
+            <Font size="46.0" />
+         </font></Button>
+      <TextArea fx:id="letra" cacheShape="false" centerShape="false" layoutX="452.0" layoutY="347.0" prefHeight="77.0" prefWidth="121.0" promptText="Letra" scaleShape="false">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="-20.0" />
+         </opaqueInsets></TextArea>
+          <Text fx:id="letrasAcertadasId" fill="#639466" layoutX="24.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="LETRAS QUE SE ACERTARON: " wrappingWidth="311.421875">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+       <Text fx:id="letrasFalladasId" fill="#9a3535" layoutX="24.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="LETRAS QUE SE FALLARON: " wrappingWidth="311.421875">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+       <Text fx:id="contador" fill="#9cc5e2" layoutX="220.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Contador, VICTORIAS: 0 DERROTAS: 0" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font></Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="247.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="720.0" />
+      <Text fx:id="areaCompletar" fill="#9cc5e2" layoutX="32.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" textAlignment="CENTER" wrappingWidth="639.13671875">
+         <font>
+            <Font size="48.0" />
+         </font></Text>
+      <Text fx:id="ResultTries" fill="WHITE" layoutX="24.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text=" " wrappingWidth="350.13671875">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
    </children>
 </AnchorPane>
