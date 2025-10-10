@@ -15,7 +15,7 @@ public class SQLread {
         ResultSet rs = null;
 
         List<String> datos = new ArrayList<>();
-
+//COMPROBACIÓN DE ERRORES
         try {
             System.out.println("Conectando");
 
@@ -38,7 +38,6 @@ public class SQLread {
                 count++;
                 System.out.println("Palabra " + count + ": " + palabra);
             }
-
             System.out.println("Total palabras obtenidas: " + count);
             System.out.println("CORRECTO: " + datos);
 
@@ -55,12 +54,11 @@ public class SQLread {
                 e.printStackTrace();
             }
         }
-
         return datos;
     }
 
     public static void main(String[] args) {
         List<String> palabras = obtenerPalabras();
-        System.out.println("Probando: " + palabras);
+        System.out.println("Test: " + palabras);
     }
 }
