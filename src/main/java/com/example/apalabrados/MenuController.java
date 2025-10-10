@@ -35,8 +35,6 @@ public class MenuController {
     private int victorias = 0;
     private int derrotas = 0;
     private boolean acertado = false;
-    private String palabraActual;
-    private StringBuilder palabraOculta;
     private String textareaObtener;
     StringBuilder textooculto = new StringBuilder();
 
@@ -46,17 +44,26 @@ public class MenuController {
         mostrarPalabraAleatoria();
 //Creo SQL para continuar
         button.setOnAction(event -> {
-
             //TEST
            /* System.out.println("Cargando palabras:");
             for (String palabra : palabras) {
-                System.out.println("- " + palabra);
-            }*/
-
+                System.out.println("- " + palabra);}*/
             //Comprobar si el recuadro esta vacio o con mas de una letra, poner en mayusuculas
             comprobarAciertoIntentos();
-
         });
+        //UNA LETRA
+        letra.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.length() > 1) {
+                // Tomar solo la última letra escrita
+                letra.setText(newValue.substring(newValue.length() - 1));
+            }
+        });
+        /*MODO ENTER NO FUNCIONA AL SUPERPONER EL ENTER AL TEXTO
+        letra.setOnKeyPressed(event -> {
+            if (event.getCode().toString().equals("ENTER")) {
+                comprobarAciertoIntentos();
+            }
+        });*/
 
 
     }
@@ -94,19 +101,19 @@ public class MenuController {
         System.out.println(textareaObtener);
         //Comprobar si el recuadro esta vacio o con mas de una letra, poner en mayusuculas
         if (textareaObtener.length() != 1 || textareaObtener.isEmpty()) {
-            System.out.println("Error el texto no es el adecuado! Errores: "+errores);
-            ResultTries.setText("Error el texto no es el adecuado! Errores: "+errores);
+            System.out.println("Error el texto no es el adecuado! Errores: " + errores);
+            ResultTries.setText("Error el texto no es el adecuado! Errores: " + errores);
             letra.clear();
             return;
         }
         if (letrasFallidas.contains(textareaObtener)) {
-            System.out.println("Letra fallida ya añadida! Errores: "+errores);
-            ResultTries.setText("Letra fallida, ya añadida! Errores: "+errores);
+            System.out.println("Letra fallida ya añadida! Errores: " + errores);
+            ResultTries.setText("Letra fallida, ya añadida! Errores: " + errores);
             letra.clear();
             return;
         } else if (letrasAcertadas.contains(textareaObtener)) {
             System.out.println("Letra acertada ya añadida!  ");
-            ResultTries.setText("Letra acertada, ya añadida! Errores: "+errores);
+            ResultTries.setText("Letra acertada, ya añadida! Errores: " + errores);
             letra.clear();
             return;
         }
@@ -129,12 +136,19 @@ public class MenuController {
             actualizarTexto();
             actualizarLetrasAcertadas();
             //VICTORIA?
-
-            if(textooculto.toString() == dividida.toString()){
+//-----------------------------------------------------------------------------
+            if (textooculto.toString().equals(String.join("", dividida))) {
                 ResultTries.setText("Victoria!");
                 System.out.println("VICTORIA!");
                 victorias++;
-                contarVD();
+                letrasAcertadas.clear();
+                actualizarLetrasAcertadas();
+                letrasFallidas.clear();
+                actualizarLetrasFallidas();
+                contador.setText("Contador, VICTORIAS: " + victorias + " DERROTAS: " + derrotas);
+                button.setOnAction(event -> {
+                    mostrarPalabraAleatoria();
+                });
             }
 
 
@@ -145,8 +159,8 @@ public class MenuController {
             letrasFallidas.add(textareaObtener);
             //SI NO CUADRA NINGUNA AÑADIR 1 AL CONTADOR DE ERRORES
             errores++;
-            System.out.println("No se acertó! Errores: "+errores);
-            ResultTries.setText("No se acertó! Errores: "+errores);
+            System.out.println("No se acertó! Errores: " + errores);
+            ResultTries.setText("No se acertó! Errores: " + errores);
             actualizarLetrasFallidas();
             //LETRAS FALLADAS AÑADIR BARRA ------------------------------------------------------------
             if (errores >= 6) {
@@ -154,10 +168,13 @@ public class MenuController {
                 ResultTries.setText("Maximo de errores alcanzado!");
                 //REALIZAR ALGO AL LLEGAR AL MAXIMO DE ERRORES?
                 letra.clear();
+                letrasAcertadas.clear();
+                actualizarLetrasAcertadas();
+                letrasFallidas.clear();
+                actualizarLetrasFallidas();
                 derrotas++;
-                contarVD();
-                errores=0;
-//ARREGLAR ----------------------------
+                contador.setText("Contador, VICTORIAS: " + victorias + " DERROTAS: " + derrotas);
+                errores = 0;
                 button.setOnAction(event -> {
                     mostrarPalabraAleatoria();
                 });
@@ -206,13 +223,6 @@ public class MenuController {
         //ARREGLAR
         System.out.println("LETRAS QUE SE FALLARON: " + letrasFallidas);
         letrasFalladasId.setText(String.valueOf("LETRAS QUE SE FALLARON: " + letrasFallidas));
-    }
-
-
-    private void contarVD() {
-        //Contar numero de victorias,derrotas en un contador?
-        contador.setText(String.valueOf("Contador, VICTORIAS: " + victorias + " DERROTAS: " + derrotas));
-
     }
 }
 /*      System.out.println("\nLista de palabras:");
