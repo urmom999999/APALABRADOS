@@ -37,8 +37,8 @@
          <font>
             <Font size="22.0" />
          </font></Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="247.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="720.0" />
-      <Text fx:id="areaCompletar" fill="#9cc5e2" layoutX="32.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" textAlignment="CENTER" wrappingWidth="639.13671875">
+      <Rectangle id="fondo2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="247.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" width="720.0" />
+      <Text fx:id="areaCompletar" fill="#105281" layoutX="32.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" textAlignment="CENTER" wrappingWidth="639.13671875">
          <font>
             <Font size="48.0" />
          </font></Text>

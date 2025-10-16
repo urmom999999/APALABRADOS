@@ -39,21 +39,25 @@
 -fx-text-fill:#397DCA;
 -fx-font-size: 20px;
 -fx-font-family:'Jersey 10';
+-fx-background-color: #60A85A;
+-fx-text-fill: white;
 }
 .button:hover {
     -fx-text-fill: #7CBFA7;
 }
 #letra{
--fx-text-fill: black;
+-fx-text-fill: 0A4570;
 -fx-font-family:'Jersey 10';
 -fx-font-size: 28px;
+-fx-fill: #ACC1E8;
+ -fx-background-color: #60A85A;
 }
 .button:pressed {
 -fx-text-fill: #FFFFFF;
 }
 
 #areaCompletar{-fx-text-fill: #317D63;
--fx-text-fill: #103550;
+-fx-text-fill: #0C2043;
 -fx-font-size: 60px;
 -fx-font-family:'Jersey 10';
 }
@@ -68,4 +72,7 @@
 }
 #contador{
 -fx-font-family:'Jersey 10';
+}
+#fondo2{
+-fx-fill: #ACC1E8;
 }
