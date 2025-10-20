@@ -3,17 +3,14 @@
   font-family: "Jersey 10", sans-serif !important;
   font-weight: 400 !important;
   -fx-text-fill:#9CC5E2;
-
 }
 .root {
     -fx-font-family:'Jersey 10';
     -fx-text-fill:#9CC5E2;
     -fx-font-color:#9CC5E2;
-
-
 }
 .background-pane {
-    -fx-background-color: #103550;
+-fx-background-image: url('fondo.jpg');
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -28,11 +25,11 @@
 #titulo{
 -fx-font-family:'Jersey 10';
 -fx-font-size: 40px;
--fx-text-fill:#9CC5E2;
--fx-font-color:#9CC5E2;}
+-fx-background-color:black;
+-fx-fill:#CBD8FA;}
+
 #areaCompletar{
 -fx-font-family:'Jersey 10';
--fx-font-size: 40px;
 -fx-text-fill:#9CC5E2;
 }
 .button{
@@ -45,18 +42,24 @@
 .button:hover {
     -fx-text-fill: #7CBFA7;
 }
+.text{
+-fx-background-color:red;
+}
+
+
+
 #letra{
--fx-text-fill: 0A4570;
+-fx-alignment:center;
+-fx-text-fill: #9ACEFF;
 -fx-font-family:'Jersey 10';
 -fx-font-size: 28px;
--fx-fill: #ACC1E8;
- -fx-background-color: #60A85A;
+-fx-margin: 20 0 0 0;
 }
 .button:pressed {
 -fx-text-fill: #FFFFFF;
 }
 
-#areaCompletar{-fx-text-fill: #317D63;
+#areaCompletar{
 -fx-text-fill: #0C2043;
 -fx-font-size: 60px;
 -fx-font-family:'Jersey 10';
@@ -72,7 +75,4 @@
 }
 #contador{
 -fx-font-family:'Jersey 10';
-}
-#fondo2{
--fx-fill: #ACC1E8;
 }
